@@ -1,6 +1,6 @@
 import { GraphQLServer } from 'graphql-yoga'
 import { prisma } from './generated/prisma-client'
-import { resolvers } from './resolvers'
+// import { resolvers } from './resolvers'
 import { defaultPlaygroundQuery } from './defaultPlaygroundQuery'
 
 /**
@@ -12,8 +12,8 @@ import { defaultPlaygroundQuery } from './defaultPlaygroundQuery'
 
 
 const server = new GraphQLServer({
-  typeDefs: './src/schema.graphql',
-  resolvers: resolvers,
+  typeDefs: './src/prisma.graphql',
+  // resolvers: resolvers,
   context: {
     prisma,
   },

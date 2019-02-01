@@ -1,4 +1,4 @@
-export const typeDefs = /* GraphQL */ `type AggregateAuthUser {
+type AggregateAuthUser {
   count: Int!
 }
 
@@ -453,4 +453,3 @@ type Query {
 type Subscription {
   authUser(where: AuthUserSubscriptionWhereInput): AuthUserSubscriptionPayload
 }
-`

@@ -1,16 +1,30 @@
-type User {
-  id: ID! @unique
-  email: String! @unique
-  name: String
-  posts: [Post!]!
-}
-
-type Post {
-  id: ID! @unique
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  published: Boolean! @default(value: "false")
-  title: String!
-  content: String
-  author: User!
+# 用户信息
+type AuthUser {
+   # 用户唯一标识
+   id: ID! @unique
+   # 手机号码
+   mobileNo: String @unique
+   # 身份证
+   idCard: String @unique
+   # 用户名称(非空)
+   userName: String! @unique
+   # 邮箱
+   email: String @unique
+   # 最后一颁发token时间
+   lastLoginDate: String
+   # 最后一次重置密码的时间(重置后,重新颁发token,则老的失效)
+   lastResetDate: String
+   # 姓名
+   name: String
+   # 实名认证状态:-1认证失败,0请求认证,1认证通过,null未请求认证
+   certifiedStatus: Int
+   # 头像
+   headpic: String
+   kongKey: String
+   kongId: String 
+   accessKey: String
+   accessId: String
+   passWord: String
+   lesseeId: String
+   wxopenId: String
 }
